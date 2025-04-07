@@ -54,25 +54,22 @@ pip install tk psycopg2-binary pillow
 ```
 
 ### Proyecto Laravel Base
-El proyecto generado hereda gran parte de su configuración del archivo `.env` de un proyecto Laravel base ubicado en `C:\xampp\htdocs\TallerEspecialidad\ProyectoSHC131\laravel-base`. Este archivo es crítico para definir la conexión a la base de datos y otras configuraciones iniciales.
+El proyecto generado hereda gran parte de su configuración del archivo `.env` de un proyecto Laravel base ubicado en la misma carpeta de tu proyecto a generar. Este archivo es crítico para definir la conexión a la base de datos y otras configuraciones iniciales.
 
 - **Preparar el Proyecto Base**:
   1. Crea un proyecto Laravel limpio:
      ```bash
      composer create-project laravel/laravel laravel-base
      ```
-  2. Mueve la carpeta `laravel-base` a `C:\xampp\htdocs\TallerEspecialidad\ProyectoSHC131\laravel-base`.
+  2. Mueve la carpeta `laravel-base` a la misma donde quieres que se genere el proyecto.
   3. Instala las dependencias necesarias, incluyendo Yajra DataTables:
      ```bash
-     cd C:\xampp\htdocs\TallerEspecialidad\ProyectoSHC131\laravel-base
+     cd C:\xampp\htdocs\carpeta_a_usar\laravel-base
      composer install
      composer require yajra/laravel-datatables-oracle
      ```
   4. Configura el archivo `.env` en `laravel-base` con una conexión a PostgreSQL (ejemplo más adelante en "Instalación").
-  5. Genera la clave de la aplicación:
-     ```bash
-     php artisan key:generate
-     ```
+
 
 ### Proyecto Existente (para "Generar Modelos")
 Si optas por generar solo modelos en un proyecto Laravel existente:
@@ -92,7 +89,7 @@ Si optas por generar solo modelos en un proyecto Laravel existente:
    ```bash
    git clone <URL_DEL_REPOSITORIO>
    ```
-   O copia `crud_generator.py` a `C:\xampp\htdocs\TallerEspecialidad\`.
+   O copia `crud_generator.py` a `C:\xampp\htdocs\carpeta_a_usar\`.
 
 ### Paso 2: Configurar la Imagen de Login
 1. Crea una carpeta `images` en el mismo directorio que `crud_generator.py`.
@@ -128,17 +125,77 @@ pip install tk psycopg2-binary pillow
    ```
 
 ### Paso 5: Configurar el Proyecto Laravel Base
-1. Asegúrate de que `C:\xampp\htdocs\TallerEspecialidad\ProyectoSHC131\laravel-base` exista.
+1. Asegúrate de que `C:\xampp\htdocs\carpeta_a_usar\laravel-base` exista.
 2. Edita el archivo `.env` en `laravel-base` con tu configuración de PostgreSQL:
    ```env
-   DB_CONNECTION=pgsql
-   DB_HOST=127.0.0.1
-   DB_PORT=5432
-   DB_DATABASE=crud_test
-   DB_USERNAME=postgres
-   DB_PASSWORD=tu_contraseña
+   APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=base64:O1NkZNMB5xkh4kWs+fqW6quGRQAzoSp6sf4PFPA0/N8=
+APP_DEBUG=true
+APP_URL=http://localhost
+
+APP_LOCALE=en
+APP_FALLBACK_LOCALE=en
+APP_FAKER_LOCALE=en_US
+
+APP_MAINTENANCE_DRIVER=file
+# APP_MAINTENANCE_STORE=database
+
+PHP_CLI_SERVER_WORKERS=4
+
+BCRYPT_ROUNDS=12
+
+LOG_CHANNEL=stack
+LOG_STACK=single
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=debug
+
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=dbpostgrado
+DB_USERNAME=postgres
+DB_PASSWORD=joaco123
+
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+SESSION_ENCRYPT=false
+SESSION_PATH=/
+SESSION_DOMAIN=null
+
+BROADCAST_CONNECTION=log
+FILESYSTEM_DISK=local
+QUEUE_CONNECTION=database
+
+CACHE_STORE=database
+# CACHE_PREFIX=
+
+MEMCACHED_HOST=127.0.0.1
+
+REDIS_CLIENT=phpredis
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_MAILER=log
+MAIL_SCHEME=null
+MAIL_HOST=127.0.0.1
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+AWS_USE_PATH_STYLE_ENDPOINT=false
+
+VITE_APP_NAME="${APP_NAME}"
+
    ```
-   **Nota**: Este `.env` será copiado al nuevo proyecto generado, asegurando que la conexión a la base de datos esté preconfigurada.
+   **Nota**: Este `.env` será copiado al nuevo proyecto generado, asegurando que la conexión a la base de datos esté preconfigurada. Aqui te dejo un ejemplo que si funciona, asegúrate de que este igual o en basea tu base de datos y configuraciones
 
 3. Instala Yajra DataTables:
    ```bash
@@ -175,7 +232,8 @@ python crud_generator.py
    - **Contraseña**: Tu contraseña
 2. Haz clic en **Probar Conexión**.
 - Captura:  
-  ![Configuración de Conexión](images/db_config_screen.png)
+  ![image](https://github.com/user-attachments/assets/bfdfd28b-589a-4fa3-b62b-f2b67239f6fd)
+
 
 ### Paso 4: Seleccionar Tablas
 1. Marca las tablas deseadas con ✔.
