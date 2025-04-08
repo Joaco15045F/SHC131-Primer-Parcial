@@ -89,10 +89,10 @@ Si optas por generar solo modelos en un proyecto Laravel existente:
    ```bash
    git clone <URL_DEL_REPOSITORIO>
    ```
-   O copia `crud_generator.py` a `C:\xampp\htdocs\carpeta_a_usar\`.
+   O copia `Login.py` a `C:\xampp\htdocs\carpeta_a_usar\`.
 
 ### Paso 2: Configurar la Imagen de Login
-1. Crea una carpeta `images` en el mismo directorio que `crud_generator.py`.
+1. Crea una carpeta `images` en el mismo directorio que `Login.py`.
 2. Coloca una imagen llamada `imglogin.png` (recomendado: 150x165 píxeles).
 
 ### Paso 3: Instalar Dependencias de Python
@@ -213,7 +213,7 @@ VITE_APP_NAME="${APP_NAME}"
 ### Paso 1: Iniciar la Aplicación
 Ejecuta:
 ```bash
-python crud_generator.py
+python Login.py
 ```
 
 ### Paso 2: Autenticación
