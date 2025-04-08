@@ -306,11 +306,4 @@ Proyecto académico para SHC131. Uso exclusivo educativo.
 
 ---
 
-## Galería de Imágenes
-Guarda en `images/`:
-1. `banner.png`
-2. `login_screen.png`
-3. `db_config_screen.png`
-4. `table_selection_screen.png`
-5. `laravel_home_screen.png`
-6. `crud_view_screen.png`
+
