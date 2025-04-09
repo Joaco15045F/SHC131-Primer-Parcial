@@ -175,13 +175,13 @@ En la raíz del repositorio:
 pip install tk psycopg2-binary pillow
 ```
 
-### 3. Configurar PostgreSQL
-1. Inicia PostgreSQL en XAMPP.
-2. Crea una base de datos:
-   ```sql
-   CREATE DATABASE crud_test;
-   ```
-3. Añade tablas de prueba:
+### 3. Configurar PostgreSQL con pgAdmin 4
+1. Asegúrate de que PostgreSQL esté instalado y en ejecución.
+2. Abre **pgAdmin 4** (incluido con PostgreSQL).
+3. Crea una base de datos:
+   - Haz clic derecho en "Databases" > "Create" > "Database".
+   - Nómbrala `crud_test` y haz clic en "Save".
+4. Ejecuta el siguiente SQL en la pestaña "Query Tool" de `crud_test` para crear tablas de prueba:
    ```sql
    CREATE TABLE usuarios (
        id SERIAL PRIMARY KEY,
@@ -194,7 +194,6 @@ pip install tk psycopg2-binary pillow
        fecha DATE NOT NULL,
        total NUMERIC(10,2)
    );
-   ```
 
 ### 4. Configurar el Proyecto Base
 1. Navega a `laravel-base`:
