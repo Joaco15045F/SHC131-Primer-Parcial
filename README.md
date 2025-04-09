@@ -264,17 +264,19 @@ python Login.py
 
 3. El servidor inicia en `http://127.0.0.1:8000`. 
 - Captura:  
-  ![Generado](images/laravel_home_screen.png)
+  ![Captura de pantalla 2025-04-08 232136](https://github.com/user-attachments/assets/977ab440-9f01-4d9e-8cf1-8f49d41cc0a1)
+
 
 ### 6. Explorar la Aplicación
 - Visita `http://127.0.0.1:8000`.
 - Captura:  
  ![image](https://github.com/user-attachments/assets/1e5b542b-6cd2-4b63-903c-088e3f9e217c)
 ![image](https://github.com/user-attachments/assets/1778eeae-3f00-4c29-a0d1-0066fd2ef557)
+![Captura de pantalla 2025-04-08 232252](https://github.com/user-attachments/assets/9f71c794-d743-44c4-9a9b-6173bd50e8cb)
+![Captura de pantalla 2025-04-08 232318](https://github.com/user-attachments/assets/58a545c5-b1ed-4281-ae4f-9786e9c3ee79)
+![Captura de pantalla 2025-04-08 232337](https://github.com/user-attachments/assets/8e0d2d6c-a3ff-455e-a464-476e60136244)
+![Captura de pantalla 2025-04-08 232328](https://github.com/user-attachments/assets/ac62ebed-d9b4-4dcf-baa7-6cc20150d422)
 
-
-
----
 
 ## Estructura del Proyecto Generado
 ```
