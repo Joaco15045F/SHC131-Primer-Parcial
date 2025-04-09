@@ -1,128 +1,181 @@
 # Generador Automático de CRUD en Laravel con Interfaz Tkinter
 
-
 ## Descripción
-El **Generador Automático de CRUD en Laravel con Interfaz Tkinter** es una herramienta avanzada desarrollada en Python que automatiza la creación de aplicaciones web CRUD (Crear, Leer, Actualizar, Eliminar) basadas en Laravel, conectadas a una base de datos PostgreSQL. A través de una interfaz gráfica construida con Tkinter, los usuarios pueden autenticarse, configurar conexiones a bases de datos, seleccionar tablas y generar un proyecto Laravel completo con modelos, controladores, vistas y rutas optimizadas. Este proyecto está diseñado para acelerar el desarrollo de aplicaciones web, ofreciendo soporte para relaciones de claves foráneas, manejo de archivos y una experiencia de usuario dinámica con DataTables.
-
+El **Generador Automático de CRUD en Laravel con Interfaz Tkinter** es una herramienta desarrollada en Python que automatiza la creación de aplicaciones web CRUD (Crear, Leer, Actualizar, Eliminar) basadas en Laravel y PostgreSQL. Utiliza una interfaz gráfica en Tkinter para autenticación, configuración de bases de datos y generación de proyectos Laravel completos con modelos, controladores, vistas y rutas optimizadas. Este proyecto agiliza el desarrollo web, incluyendo soporte para relaciones de claves foráneas, manejo de imágenes y DataTables dinámicos.
 
 ---
 
 ## Características Principales
-- **Autenticación Segura**: Ventana de login con credenciales predefinidas para acceso controlado.
-- **Conexión Dinámica**: Configuración y validación de conexiones a bases de datos PostgreSQL.
-- **Selección de Tablas**: Interfaz interactiva para elegir tablas y detectar relaciones automáticamente.
+- **Autenticación**: Login seguro con credenciales predefinidas.
+- **Conexión a BD**: Configuración dinámica y validación para PostgreSQL.
+- **Selección de Tablas**: Detección automática de tablas y relaciones.
 - **Generación Automática**:
-  - Modelos Eloquent con relaciones `belongsTo` basadas en claves foráneas.
-  - Controladores RESTful con validaciones personalizadas y manejo de excepciones.
-  - Vistas Blade con Yajra DataTables, modales AJAX y formularios dinámicos.
-  - Rutas Laravel con nombres optimizados y parámetros acortados.
-- **Soporte Multimedia**: Subida y gestión de imágenes para campos específicos.
-- **Integración Completa**: Proyecto Laravel listo para producción con `php artisan serve`.
-- **Personalización**: Elección de campos descriptivos para relaciones foráneas mediante diálogos interactivos.
+  - Modelos Eloquent con relaciones `belongsTo`.
+  - Controladores RESTful con validaciones y excepciones.
+  - Vistas Blade con Yajra DataTables y modales AJAX.
+  - Rutas optimizadas.
+- **Multimedia**: Subida y gestión de imágenes.
+- **Integración**: Proyecto listo para producción con `php artisan serve`.
+- **Personalización**: Selección interactiva de campos descriptivos para relaciones.
 
 ---
 
 ## Tecnologías Utilizadas
-- **Python 3.8+**: Lenguaje principal para la lógica de generación y la interfaz.
-- **Tkinter**: Biblioteca para la interfaz gráfica de usuario.
-- **psycopg2**: Conector para PostgreSQL en Python.
-- **PIL (Pillow)**: Manejo de imágenes en la interfaz.
-- **Laravel 10.x**: Framework PHP para el backend generado.
-- **PostgreSQL**: Sistema de gestión de bases de datos relacionales.
-- **Bootstrap 5**: Estilizado de las vistas generadas.
-- **Yajra DataTables**: Tablas dinámicas server-side en las vistas CRUD.
-- **Composer**: Gestión de dependencias PHP.
+- **Python 3.8+**: Lógica y GUI.
+- **Tkinter**: Interfaz gráfica.
+- **psycopg2**: Conector PostgreSQL.
+- **Pillow**: Manejo de imágenes.
+- **Laravel 10.x**: Framework PHP.
+- **PostgreSQL 14+**: Base de datos.
+- **Bootstrap 5**: Estilizado.
+- **Yajra DataTables**: Tablas dinámicas.
+- **Composer**: Dependencias PHP.
 
 ---
 
 ## Requisitos Previos
-Antes de instalar y ejecutar el proyecto, asegúrate de cumplir con los siguientes requisitos:
 
 ### Software
-- **Python 3.8 o superior**: [Descargar aquí](https://www.python.org/downloads/).
-- **XAMPP 8.x**: Incluye PHP y soporte para PostgreSQL ([Descargar](https://www.apachefriends.org/es/index.html)).
-- **PHP 8.1+**: Requerido por Laravel.
-- **Composer**: Gestor de dependencias PHP ([Descargar](https://getcomposer.org/)).
-- **PostgreSQL 14+**: Base de datos relacional ([Descargar](https://www.postgresql.org/download/)).
-- **Git**: Para control de versiones (opcional).
+- **Python 3.8+**: [Descargar](https://www.python.org/downloads/).
+- **XAMPP 8.x**: Incluye PHP y PostgreSQL ([Descargar](https://www.apachefriends.org/es/index.html)).
+- **PHP 8.1+**: Para Laravel.
+- **Composer**: [Descargar](https://getcomposer.org/).
+- **PostgreSQL 14+**: [Descargar](https://www.postgresql.org/download/).
+- **Git**: Para clonar el repositorio.
 
 ### Dependencias de Python
-Instala las siguientes librerías mediante `pip`:
+Instala con:
 ```bash
 pip install tk psycopg2-binary pillow
 ```
 
 ### Proyecto Laravel Base
-El proyecto generado hereda gran parte de su configuración del archivo `.env` ubicado en la carpeta `laravel-base`, la cual está incluida en este mismo repositorio. Este archivo es esencial para definir la conexión a la base de datos y otras configuraciones iniciales.
+El proyecto usa `laravel-base` (incluido en este repositorio) como plantilla:
+1. Navega a `laravel-base`:
+   ```bash
+   cd laravel-base
+   ```
+2. Instala dependencias:
+   ```bash
+   composer install
+   composer require yajra/laravel-datatables-oracle
+   ```
+3. Configura `.env` en `laravel-base` según tu PostgreSQL:
+   ```
+   DB_CONNECTION=pgsql
+   DB_HOST=127.0.0.1
+   DB_PORT=5432
+   DB_DATABASE=crud_test
+   DB_USERNAME=postgres
+   DB_PASSWORD=tu_contraseña
+   ```
+   **Nota**: Ajusta `DB_DATABASE`, `DB_USERNAME` y `DB_PASSWORD` a tu entorno.
 
-- **Preparar el Proyecto Base**:
-  1. El proyecto base ya está disponible en la carpeta `laravel-base` de este repositorio. No es necesario crear uno nuevo manualmente.
-  2. Navega a la carpeta `laravel-base` desde la raíz del repositorio:
-     ```bash
-     cd laravel-base
-     ```
-  3. Instala las dependencias necesarias, incluyendo Yajra DataTables:
-     ```bash
-     composer install
-     composer require yajra/laravel-datatables-oracle
-     ```
-  4. Configura el archivo `.env` dentro de `laravel-base` para la conexión a PostgreSQL. A continuación, se muestra un ejemplo que debes ajustar según los datos de tu propia base de datos:
-     ```
-     DB_CONNECTION=pgsql
-     DB_HOST=127.0.0.1
-     DB_PORT=5432
-     DB_DATABASE=dbpostgrado
-     DB_USERNAME=postgres
-     DB_PASSWORD=joaco123
-     ```
-     **Nota**: Actualiza los valores de `DB_DATABASE`, `DB_USERNAME` y `DB_PASSWORD` (y, si es necesario, `DB_HOST` y `DB_PORT`) con la información específica de tu entorno de PostgreSQL.
+### Proyecto Existente (Opcional - Generar Solo Modelos)
+Para generar modelos en un proyecto Laravel existente:
+- Debe usar Laravel 10.x.
+- Requiere `yajra/laravel-datatables-oracle` en `composer.json`. Instala con:
+  ```bash
+  composer require yajra/laravel-datatables-oracle
+  ```
+- Configura `.env` en el proyecto existente con PostgreSQL. Ejemplo:
+  ```
+  APP_NAME=Laravel
+  APP_ENV=local
+  APP_KEY=base64:O1NkZNMB5xkh4kWs+fqW6quGRQAzoSp6sf4PFPA0/N8=
+  APP_DEBUG=true
+  APP_URL=http://localhost
 
+  APP_LOCALE=en
+  APP_FALLBACK_LOCALE=en
+  APP_FAKER_LOCALE=en_US
 
-### Proyecto Existente (para "Generar Modelos")
-Si optas por generar solo modelos en un proyecto Laravel existente:
-- El proyecto debe tener Laravel 10.x instalado.
-- Debe incluir las siguientes dependencias en `composer.json`:
-  - `yajra/laravel-datatables-oracle` para soporte de DataTables.
-  - Dependencias estándar de Laravel (como `laravel/framework`).
-- El archivo `.env` del proyecto existente debe estar configurado con una conexión válida a PostgreSQL.
-- Ejecuta `composer install` en el proyecto existente para asegurar que todas las dependencias estén disponibles.
+  APP_MAINTENANCE_DRIVER=file
+
+  PHP_CLI_SERVER_WORKERS=4
+
+  BCRYPT_ROUNDS=12
+
+  LOG_CHANNEL=stack
+  LOG_STACK=single
+  LOG_DEPRECATIONS_CHANNEL=null
+  LOG_LEVEL=debug
+
+  DB_CONNECTION=pgsql
+  DB_HOST=127.0.0.1
+  DB_PORT=5432
+  DB_DATABASE=dbpostgrado
+  DB_USERNAME=postgres
+  DB_PASSWORD=joaco123
+
+  SESSION_DRIVER=file
+  SESSION_LIFETIME=120
+  SESSION_ENCRYPT=false
+  SESSION_PATH=/
+  SESSION_DOMAIN=null
+
+  BROADCAST_CONNECTION=log
+  FILESYSTEM_DISK=local
+  QUEUE_CONNECTION=database
+
+  CACHE_STORE=database
+
+  MEMCACHED_HOST=127.0.0.1
+
+  REDIS_CLIENT=phpredis
+  REDIS_HOST=127.0.0.1
+  REDIS_PASSWORD=null
+  REDIS_PORT=6379
+
+  MAIL_MAILER=log
+  MAIL_SCHEME=null
+  MAIL_HOST=127.0.0.1
+  MAIL_PORT=2525
+  MAIL_USERNAME=null
+  MAIL_PASSWORD=null
+  MAIL_FROM_ADDRESS="hello@example.com"
+  MAIL_FROM_NAME="${APP_NAME}"
+
+  AWS_ACCESS_KEY_ID=
+  AWS_SECRET_ACCESS_KEY=
+  AWS_DEFAULT_REGION=us-east-1
+  AWS_BUCKET=
+  AWS_USE_PATH_STYLE_ENDPOINT=false
+
+  VITE_APP_NAME="${APP_NAME}"
+  ```
+  **Nota**: Ajusta `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`, y otros valores según tu configuración.
+- Ejecuta `composer install` en el proyecto existente.
 
 ---
 
 ## Instalación
 
-### Paso 1: Descargar el Proyecto
-1. Clona o descarga este proyecto en un directorio accesible:
-   ```bash
-   git clone <URL_DEL_REPOSITORIO>
-   ```
-   O copia `Login.py` a `C:\xampp\htdocs\carpeta_a_usar\`.
+### 1. Clonar el Repositorio
+Clona el proyecto (incluye `Login.py`, `images/imglogin.png`, y `laravel-base`):
+```bash
+git clone <URL_DEL_REPOSITORIO>
+```
 
-### Paso 2: Configurar la Imagen de Login
-1. Crea una carpeta `images` en el mismo directorio que `Login.py`.
-2. Coloca una imagen llamada `imglogin.png` (recomendado: 150x165 píxeles).
-
-### Paso 3: Instalar Dependencias de Python
-Ejecuta:
-
+### 2. Instalar Dependencias de Python
+En la raíz del repositorio:
 ```bash
 pip install tk psycopg2-binary pillow
 ```
 
-### Paso 4: Configurar PostgreSQL
-1. Inicia PostgreSQL en XAMPP o tu servidor local.
-2. Crea una base de datos de prueba:
+### 3. Configurar PostgreSQL
+1. Inicia PostgreSQL en XAMPP.
+2. Crea una base de datos:
    ```sql
    CREATE DATABASE crud_test;
    ```
-3. Añade tablas de ejemplo:
+3. Añade tablas de prueba:
    ```sql
    CREATE TABLE usuarios (
        id SERIAL PRIMARY KEY,
        nombre VARCHAR(255) NOT NULL,
        email VARCHAR(255) UNIQUE NOT NULL
    );
-
    CREATE TABLE pedidos (
        id SERIAL PRIMARY KEY,
        usuario_id INT REFERENCES usuarios(id),
@@ -131,136 +184,82 @@ pip install tk psycopg2-binary pillow
    );
    ```
 
-### Paso 5: Configurar el Proyecto Laravel Base
-1. Asegúrate de que `C:\xampp\htdocs\carpeta_a_usar\laravel-base` exista.
-2. Edita el archivo `.env` en `laravel-base` con tu configuración de PostgreSQL:
-   ```env
-   APP_NAME=Laravel
-    APP_ENV=local
-    APP_KEY=base64:O1NkZNMB5xkh4kWs+fqW6quGRQAzoSp6sf4PFPA0/N8=
-    APP_DEBUG=true
-    APP_URL=http://localhost
-    
-    APP_LOCALE=en
-    APP_FALLBACK_LOCALE=en
-    APP_FAKER_LOCALE=en_US
-    
-    APP_MAINTENANCE_DRIVER=file
-    # APP_MAINTENANCE_STORE=database
-    
-    PHP_CLI_SERVER_WORKERS=4
-    
-    BCRYPT_ROUNDS=12
-    
-    LOG_CHANNEL=stack
-    LOG_STACK=single
-    LOG_DEPRECATIONS_CHANNEL=null
-    LOG_LEVEL=debug
-    
-    DB_CONNECTION=pgsql
-    DB_HOST=127.0.0.1
-    DB_PORT=5432
-    DB_DATABASE=dbpostgrado
-    DB_USERNAME=postgres
-    DB_PASSWORD=joaco123
-    
-    SESSION_DRIVER=file
-    SESSION_LIFETIME=120
-    SESSION_ENCRYPT=false
-    SESSION_PATH=/
-    SESSION_DOMAIN=null
-    
-    BROADCAST_CONNECTION=log
-    FILESYSTEM_DISK=local
-    QUEUE_CONNECTION=database
-    
-    CACHE_STORE=database
-    # CACHE_PREFIX=
-    
-    MEMCACHED_HOST=127.0.0.1
-    
-    REDIS_CLIENT=phpredis
-    REDIS_HOST=127.0.0.1
-    REDIS_PASSWORD=null
-    REDIS_PORT=6379
-    
-    MAIL_MAILER=log
-    MAIL_SCHEME=null
-    MAIL_HOST=127.0.0.1
-    MAIL_PORT=2525
-    MAIL_USERNAME=null
-    MAIL_PASSWORD=null
-    MAIL_FROM_ADDRESS="hello@example.com"
-    MAIL_FROM_NAME="${APP_NAME}"
-    
-    AWS_ACCESS_KEY_ID=
-    AWS_SECRET_ACCESS_KEY=
-    AWS_DEFAULT_REGION=us-east-1
-    AWS_BUCKET=
-    AWS_USE_PATH_STYLE_ENDPOINT=false
-    
-    VITE_APP_NAME="${APP_NAME}"
-
-   ```
-   **Nota**: Este `.env` será copiado al nuevo proyecto generado, asegurando que la conexión a la base de datos esté preconfigurada. Aqui te dejo un ejemplo que si funciona, asegúrate de que este igual o en basea tu base de datos y configuraciones
-
-3. Instala Yajra DataTables:
+### 4. Configurar el Proyecto Base
+1. Navega a `laravel-base`:
    ```bash
+   cd laravel-base
+   ```
+2. Edita `.env` con tu configuración de PostgreSQL (ejemplo):
+   ```
+   APP_NAME=Laravel
+   APP_ENV=local
+   APP_KEY=base64:O1NkZNMB5xkh4kWs+fqW6quGRQAzoSp6sf4PFPA0/N8=
+   APP_DEBUG=true
+   APP_URL=http://localhost
+   DB_CONNECTION=pgsql
+   DB_HOST=127.0.0.1
+   DB_PORT=5432
+   DB_DATABASE=crud_test
+   DB_USERNAME=postgres
+   DB_PASSWORD=tu_contraseña
+   SESSION_DRIVER=file
+   FILESYSTEM_DISK=local
+   ```
+   **Nota**: Ajusta `DB_PASSWORD` y otros valores según tu entorno.
+3. Instala dependencias:
+   ```bash
+   composer install
    composer require yajra/laravel-datatables-oracle
    ```
 
-### Paso 6: Configurar XAMPP
-1. Inicia Apache y PostgreSQL desde el panel de control de XAMPP.
-2. Asegúrate de que PHP esté en el PATH del sistema.
+### 5. Configurar XAMPP
+- Inicia Apache y PostgreSQL desde el panel de XAMPP.
+- Asegúrate de que PHP esté en el PATH.
 
 ---
 
 ## Uso
 
-### Paso 1: Iniciar la Aplicación
-Ejecuta:
+### 1. Iniciar la Aplicación
+En la raíz del repositorio:
 ```bash
 python Login.py
 ```
 
-### Paso 2: Autenticación
+### 2. Autenticación
+- **Usuario**: `Joaco`
+- **Contraseña**: `joaco123`
+- Captura:  
+  ![Login](https://github.com/user-attachments/assets/5b7e0016-8fc3-42d9-83d8-4aaf329a2eb4)
+
+### 3. Configurar la Conexión
 - Ingresa:
-  - **Usuario**: `Joaco`
-  - **Contraseña**: `joaco123`
+  - **Base de datos**: `crud_test`
+  - **Puerto**: `5432`
+  - **Usuario**: `postgres`
+  - **Contraseña**: Tu contraseña
+- Haz clic en **Probar Conexión**.
 - Captura:  
-  ![image](https://github.com/user-attachments/assets/5b7e0016-8fc3-42d9-83d8-4aaf329a2eb4)
+  ![Conexión](https://github.com/user-attachments/assets/bfdfd28b-589a-4fa3-b62b-f2b67239f6fd)
 
-
-### Paso 3: Configurar la Conexión
-1. Ingresa los datos de conexión (coincidentes con el `.env` de `laravel-base`):
-   - **Base de datos**: `crud_test`
-   - **Puerto**: `5432`
-   - **Usuario**: `postgres`
-   - **Contraseña**: Tu contraseña
-2. Haz clic en **Probar Conexión**.
+### 4. Seleccionar Tablas
+- Marca las tablas con ✔.
 - Captura:  
-  ![image](https://github.com/user-attachments/assets/bfdfd28b-589a-4fa3-b62b-f2b67239f6fd)
+  ![Selección](images/table_selection_screen.png)
 
-
-### Paso 4: Seleccionar Tablas
-1. Marca las tablas deseadas con ✔.
+### 5. Generar el Proyecto
+1. Ingresa un nombre (ejemplo: `mi_crud_app`) en "Nombre/Ruta del Proyecto".
+2. Elige:
+   - **Crear Proyecto**: Genera un nuevo proyecto completo usando `laravel-base`.
+   - **Generar Modelos**: Añade modelos, controladores y vistas a un proyecto existente (requiere `.env` configurado como en "Requisitos Previos" y Yajra instalado).
+3. El servidor inicia en `http://127.0.0.1:8000`.
 - Captura:  
-  ![Selección de Tablas](images/table_selection_screen.png)
+  ![Generado](images/laravel_home_screen.png)
 
-### Paso 5: Generar el Proyecto o Modelos
-1. Ingresa un nombre/ruta en "Nombre/Ruta del Proyecto" (ejemplo: `mi_crud_app`).
-2. Opciones:
-   - **Crear Proyecto**: Genera un nuevo proyecto Laravel completo, heredando el `.env` de `laravel-base`.
-   - **Generar Modelos**: Añade modelos, controladores y vistas a un proyecto existente.  
-     **Requisito**: El proyecto existente debe tener `yajra/laravel-datatables-oracle` instalado y un `.env` configurado.
-3. El servidor se inicia en `http://127.0.0.1:8000`.
+### 6. Explorar la Aplicación
+- Visita `http://127.0.0.1:8000`.
 - Captura:  
-  ![Proyecto Generado](images/laravel_home_screen.png)
-
-### Paso 6: Explorar la Aplicación
-- Abre `http://127.0.0.1:8000` y navega por los módulos CRUD.
-- Captura:  
-  ![Vista CRUD](images/crud_view_screen.png)
+  ![CRUD](images/crud_view_screen.png)
 
 ---
 
@@ -268,36 +267,26 @@ python Login.py
 ```
 mi_crud_app/
 ├── app/
-│   ├── Http/
-│   │   └── Controllers/
-│   │       └── <Tabla>Controller.php
-│   └── Models/
-│       └── <Tabla>.php
-├── resources/
-│   └── views/
-│       ├── layouts/
-│       │   └── app.blade.php
-│       ├── <tabla>/
-│       │   └── index.blade.php
-│       └── welcome.blade.php
-├── routes/
-│   └── web.php
-├── storage/
-│   └── app/public/
-└── .env  # Heredado de laravel-base
+│   ├── Http/Controllers/<Tabla>Controller.php
+│   └── Models/<Tabla>.php
+├── resources/views/
+│   ├── layouts/app.blade.php
+│   ├── <tabla>/index.blade.php
+│   └── welcome.blade.php
+├── routes/web.php
+├── storage/app/public/
+└── .env  # Copiado de laravel-base
 ```
-
 
 ---
 
 ## Resolución de Problemas
-
-| **Problema**                          | **Solución**                                                                 |
-|---------------------------------------|-----------------------------------------------------------------------------|
-| "DataTables no carga"                 | Asegúrate de que `yajra/laravel-datatables-oracle` esté en el proyecto.     |
-| ".env no encontrado"                  | Verifica que `laravel-base` tenga un `.env` válido antes de generar.        |
-| "Permission denied en storage"        | Ejecuta `php artisan storage:link` en el proyecto generado.                 |
-| "Tablas no aparecen"                  | Confirma que estén en el esquema `public` y el `.env` sea correcto.         |
+| **Problema**                  | **Solución**                                              |
+|-------------------------------|----------------------------------------------------------|
+| "DataTables no carga"         | Verifica `yajra/laravel-datatables-oracle` instalado.    |
+| ".env no encontrado"          | Asegúrate de que `laravel-base/.env` esté configurado.   |
+| "Permission denied en storage"| Ejecuta `php artisan storage:link`.                      |
+| "Tablas no aparecen"          | Confirma esquema `public` y `.env` correcto.             |
 
 ---
 
@@ -309,8 +298,4 @@ mi_crud_app/
 ---
 
 ## Licencia
-Proyecto académico para SHC131. Uso exclusivo educativo.
-
----
-
-
+Proyecto académico para SHC131. Uso educativo exclusivo.
