@@ -53,21 +53,29 @@ pip install tk psycopg2-binary pillow
 ```
 
 ### Proyecto Laravel Base
-El proyecto generado hereda gran parte de su configuración del archivo `.env` de un proyecto Laravel base que tiene que estar ubicado en la misma carpeta de tu proyecto a generar. Este archivo es crítico para definir la conexión a la base de datos y otras configuraciones iniciales.
+El proyecto generado hereda gran parte de su configuración del archivo `.env` ubicado en la carpeta `laravel-base`, la cual está incluida en este mismo repositorio. Este archivo es esencial para definir la conexión a la base de datos y otras configuraciones iniciales.
 
 - **Preparar el Proyecto Base**:
-  1. Crea un proyecto Laravel limpio:
+  1. El proyecto base ya está disponible en la carpeta `laravel-base` de este repositorio. No es necesario crear uno nuevo manualmente.
+  2. Navega a la carpeta `laravel-base` desde la raíz del repositorio:
      ```bash
-     composer create-project laravel/laravel laravel-base
+     cd laravel-base
      ```
-  2. Mueve la carpeta `laravel-base` a la misma donde quieres que se genere el proyecto.
   3. Instala las dependencias necesarias, incluyendo Yajra DataTables:
      ```bash
-     cd C:\xampp\htdocs\carpeta_a_usar\laravel-base
      composer install
      composer require yajra/laravel-datatables-oracle
      ```
-  4. Configura el archivo `.env` en `laravel-base` con una conexión a PostgreSQL (ejemplo más adelante en "Instalación").
+  4. Configura el archivo `.env` dentro de `laravel-base` para la conexión a PostgreSQL. A continuación, se muestra un ejemplo que debes ajustar según los datos de tu propia base de datos:
+     ```
+     DB_CONNECTION=pgsql
+     DB_HOST=127.0.0.1
+     DB_PORT=5432
+     DB_DATABASE=dbpostgrado
+     DB_USERNAME=postgres
+     DB_PASSWORD=joaco123
+     ```
+     **Nota**: Actualiza los valores de `DB_DATABASE`, `DB_USERNAME` y `DB_PASSWORD` (y, si es necesario, `DB_HOST` y `DB_PORT`) con la información específica de tu entorno de PostgreSQL.
 
 
 ### Proyecto Existente (para "Generar Modelos")
