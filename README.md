@@ -223,9 +223,10 @@ pip install tk psycopg2-binary pillow
    composer require yajra/laravel-datatables-oracle
    ```
 
-### 5. Configurar XAMPP
-- Inicia Apache y PostgreSQL desde el panel de XAMPP.
-- Asegúrate de que PHP esté en el PATH.
+### 5. Configurar PHP
+- Asegúrate de que PHP 8.1+ esté instalado y agregado al PATH del sistema. Verifica la versión con:
+  ```bash
+  php -v
 
 ---
 
