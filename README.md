@@ -4,7 +4,6 @@
 ## Descripción
 El **Generador Automático de CRUD en Laravel con Interfaz Tkinter** es una herramienta avanzada desarrollada en Python que automatiza la creación de aplicaciones web CRUD (Crear, Leer, Actualizar, Eliminar) basadas en Laravel, conectadas a una base de datos PostgreSQL. A través de una interfaz gráfica construida con Tkinter, los usuarios pueden autenticarse, configurar conexiones a bases de datos, seleccionar tablas y generar un proyecto Laravel completo con modelos, controladores, vistas y rutas optimizadas. Este proyecto está diseñado para acelerar el desarrollo de aplicaciones web, ofreciendo soporte para relaciones de claves foráneas, manejo de archivos y una experiencia de usuario dinámica con DataTables.
 
-Es ideal para desarrolladores que buscan prototipar rápidamente sistemas administrativos o para estudiantes que desean explorar la integración entre Python y frameworks PHP como Laravel.
 
 ---
 
