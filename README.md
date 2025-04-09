@@ -54,7 +54,7 @@ pip install tk psycopg2-binary pillow
 ```
 
 ### Proyecto Laravel Base
-El proyecto generado hereda gran parte de su configuración del archivo `.env` de un proyecto Laravel base ubicado en la misma carpeta de tu proyecto a generar. Este archivo es crítico para definir la conexión a la base de datos y otras configuraciones iniciales.
+El proyecto generado hereda gran parte de su configuración del archivo `.env` de un proyecto Laravel base que tiene que estar ubicado en la misma carpeta de tu proyecto a generar. Este archivo es crítico para definir la conexión a la base de datos y otras configuraciones iniciales.
 
 - **Preparar el Proyecto Base**:
   1. Crea un proyecto Laravel limpio:
