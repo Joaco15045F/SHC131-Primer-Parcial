@@ -166,7 +166,7 @@ Para generar modelos en un proyecto Laravel existente:
 ### 1. Clonar el Repositorio
 Clona el proyecto (incluye `Login.py`, `images/imglogin.png`, y `laravel-base`):
 ```bash
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/Joaco15045F/SHC131-Primer-Parcial.git
 ```
 
 ### 2. Instalar Dependencias de Python
