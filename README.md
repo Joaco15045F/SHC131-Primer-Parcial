@@ -245,21 +245,34 @@ python Login.py
 ### 4. Seleccionar Tablas
 - Marca las tablas con ✔.
 - Captura:  
-  ![Selección](images/table_selection_screen.png)
+  ![image](https://github.com/user-attachments/assets/753c685e-117b-487b-9865-723cdab5a805)
+
 
 ### 5. Generar el Proyecto
 1. Ingresa un nombre (ejemplo: `mi_crud_app`) en "Nombre/Ruta del Proyecto".
 2. Elige:
-   - **Crear Proyecto**: Genera un nuevo proyecto completo usando `laravel-base`.
-   - **Generar Modelos**: Añade modelos, controladores y vistas a un proyecto existente (requiere `.env` configurado como en "Requisitos Previos" y Yajra instalado).
-3. El servidor inicia en `http://127.0.0.1:8000`.
+   - **Crear Proyecto**: Genera un nuevo proyecto completo usando `laravel-base`. Al ejecutarse `python Login.py`, el servidor se inicia automáticamente en `http://127.0.0.1:8000` y el navegador se abre.
+     ![image](https://github.com/user-attachments/assets/691c446c-4713-4944-866e-497cabb52ba6)
+
+   - **Generar Modelos**: Añade modelos, controladores y vistas a un proyecto existente (requiere `.env` configurado como en "Requisitos Previos" y Yajra instalado). Luego, navega a la carpeta de tu proyecto Laravel y ejecuta:
+     ```bash
+     cd mi_proyecto_existente
+     php artisan serve
+     ```
+     ![image](https://github.com/user-attachments/assets/5ad99b54-8c56-42a9-bdb4-bdbcf7acbfbe)
+
+
+3. El servidor inicia en `http://127.0.0.1:8000`. 
 - Captura:  
   ![Generado](images/laravel_home_screen.png)
 
 ### 6. Explorar la Aplicación
 - Visita `http://127.0.0.1:8000`.
 - Captura:  
-  ![CRUD](images/crud_view_screen.png)
+ ![image](https://github.com/user-attachments/assets/1e5b542b-6cd2-4b63-903c-088e3f9e217c)
+![image](https://github.com/user-attachments/assets/1778eeae-3f00-4c29-a0d1-0066fd2ef557)
+
+
 
 ---
 
